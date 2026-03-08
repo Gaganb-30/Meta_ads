@@ -127,7 +127,7 @@ const SearchPanel = ({ onSearch, loading }) => {
             }
         })
 
-        onSearch(queryParams)
+        onSearch(queryParams, selectedFields)
     }
 
     const handleReset = () => {
@@ -293,12 +293,11 @@ const SearchPanel = ({ onSearch, loading }) => {
                                     <label
                                         key={field}
                                         className={`field-checkbox ${selectedFields.includes(field) ? 'checked' : ''}`}
-                                        onClick={() => toggleField(field)}
                                     >
                                         <input
                                             type="checkbox"
                                             checked={selectedFields.includes(field)}
-                                            onChange={() => { }}
+                                            onChange={() => toggleField(field)}
                                         />
                                         {field}
                                     </label>

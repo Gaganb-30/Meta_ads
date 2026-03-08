@@ -19,6 +19,7 @@ function App() {
   const [lastParams, setLastParams] = useState(null)
   const [view, setView] = useState('cards')
   const [hasSearched, setHasSearched] = useState(false)
+  const [activeFields, setActiveFields] = useState([])
 
   const handleTokenSubmit = (newToken) => {
     localStorage.setItem('meta_ads_token', newToken)
@@ -55,7 +56,8 @@ function App() {
     return url.toString()
   }
 
-  const handleSearch = async (params) => {
+  const handleSearch = async (params, selectedFields) => {
+    setActiveFields(selectedFields || [])
     setLoading(true)
     setError(null)
     setAllAds([])
@@ -181,7 +183,7 @@ function App() {
             onViewChange={setView}
             totalCount={filteredAds.length}
           />
-          <ResultsDisplay ads={filteredAds} view={view} />
+          <ResultsDisplay ads={filteredAds} view={view} fields={activeFields} />
           <Pagination
             hasMore={!!nextCursor}
             loading={loadingMore}
