@@ -55,7 +55,7 @@ const AD_TYPES = [
     { value: 'CREDIT_ADS', label: 'Credit Ads' },
     { value: 'EMPLOYMENT_ADS', label: 'Employment Ads' },
     { value: 'HOUSING_ADS', label: 'Housing Ads' },
-    { value: 'FINANCIAL_PRODUCTS_SERVICES', label: 'Financial Products' },
+    { value: 'FINANCIAL_PRODUCTS_AND_SERVICES_ADS', label: 'Financial Products' },
 ]
 
 const AD_STATUS = [
